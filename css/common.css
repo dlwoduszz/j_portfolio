@@ -1,0 +1,178 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "LINESeedKR-Bd";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix") format("embedded-opentype"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "LINESeedKR-Bd", "맑은 고딕";
+  color: #606887;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #FFF3FE;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+header {
+  width: 1200px;
+  height: 100px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  z-index: 10;
+  position: relative;
+}
+header h1 {
+  cursor: pointer;
+  height: 50px;
+}
+header h1 img {
+  height: 100%;
+}
+header .gnb .moon {
+  cursor: pointer;
+  display: inline-block;
+}
+header .gnb .menu_icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  position: relative;
+  z-index: 10;
+  transform: rotate(0deg);
+}
+header .gnb .menu_icon p,
+header .gnb .menu_icon span {
+  border: 2px solid #6367a1;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  transition-duration: 0.15s;
+}
+header .gnb .menu_icon span {
+  opacity: 0%;
+  position: absolute;
+  top: 36%;
+  left: 38%;
+}
+header .gnb .menu_list {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 15%;
+  left: 25%;
+  z-index: 2;
+  overflow: hidden;
+}
+header .gnb .menu_list ul {
+  font-size: 65px;
+  width: 100%;
+  height: 100%;
+}
+header .gnb .menu_list ul li {
+  cursor: pointer;
+  font-stretch: normal;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+}
+header .gnb .menu_list ul li span {
+  position: absolute;
+  top: -110px;
+}
+
+#container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+section .intro_box {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section .intro_box p {
+  font-family: "NanumBarunGothic";
+  font-size: 40px;
+  color: #444444;
+}
+section .jelly {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transform: scale(1);
+}
+section .jelly img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+section .jelly img:nth-of-type(1) {
+  z-index: 3;
+  top: -5%;
+  left: 65%;
+  transform: rotate(-40deg);
+  width: 40%;
+}
+section .jelly img:nth-of-type(2) {
+  z-index: 2;
+  top: -30%;
+  left: 0%;
+  transform: rotate(-60deg);
+  width: 15%;
+}
+section .jelly img:nth-of-type(3) {
+  z-index: 1;
+  top: 65%;
+  left: 2%;
+  transform: rotate(-130deg);
+  width: 40%;
+}
+section .jelly img:nth-of-type(4) {
+  top: 75%;
+  left: 75%;
+  width: 20%;
+}
