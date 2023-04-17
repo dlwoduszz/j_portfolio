@@ -23,7 +23,7 @@ $main-color: #606887;
 
 
 
-
+//공통
 * {
     margin: 0;
     padding: 0;
@@ -45,6 +45,8 @@ a {
     text-decoration: none;
 }
 
+
+//네비
 header {
     width: 1200px;
     height: 100px;
@@ -69,6 +71,7 @@ header {
         .moon {
             cursor: pointer;
             display: inline-block;
+            // float:left;
         }
 
         .menu_icon {
@@ -176,7 +179,7 @@ section {
         left: 0;
         top: 0;
         z-index: 1;
-        transform:scale(1);
+
         img {
             position: absolute;
             left: 0;
@@ -184,29 +187,35 @@ section {
 
             &:nth-of-type(1) {
                 z-index: 3;
-                top: -5%;
-                left: 65%;
-                transform: rotate(-40deg);
+                top: -100%;
+                left: 100%;
                 width: 40%;
+                animation: roll 4.5s alternate infinite ease-in-out;
             }
             &:nth-of-type(2) {
                 z-index: 2;
-                top: -30%;
-                left: 0%;
-                transform: rotate(-60deg);
+                top: -100%;
+                left: -100%;
                 width: 15%;
+                animation: roll 4.3s alternate infinite;
             }
             &:nth-of-type(3) {
                 z-index: 1;
-                top: 65%;
-                left: 2%;
-                transform: rotate(-130deg);
+                top: 100%;
+                left: -100%;
                 width: 40%;
+
+                animation: roll 4.3s alternate infinite;
             }
             &:nth-of-type(4) {
-                top: 75%;
-                left: 75%;
+                top: 100%;
+                left: 100%;
                 width: 20%;
+                animation: roll 4.5s alternate infinite;
+            }
+            @keyframes roll{
+                0%{transform: rotate(-5deg);}
+                100%{transform: rotate(5deg);}
             }
         }
     }
