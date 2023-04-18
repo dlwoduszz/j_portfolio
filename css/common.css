@@ -126,15 +126,51 @@ section {
 }
 section .intro_box {
   position: absolute;
+  text-align: center;
+  line-height: 70px;
   z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 10px;
 }
 section .intro_box p {
   font-family: "NanumBarunGothic";
   font-size: 40px;
   color: #444444;
+  position: relative;
+  opacity: 0;
+}
+section .intro_box p:nth-of-type(1) {
+  top: -200px;
+}
+section .intro_box p:nth-of-type(2) {
+  bottom: -200px;
+}
+section .intro_box p img {
+  width: 40px;
+  vertical-align: middle;
+}
+section .intro_box p a {
+  display: inline-block;
+  font-size: 20px;
+  color: #606887;
+  padding: 0px 10px;
+  font-weight: lighter;
+  line-height: 40px;
+}
+section .intro_box p a:after {
+  display: block;
+  content: "";
+  border-bottom: 2px solid #606887;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+section .intro_box p a:hover:after {
+  transform: scaleX(1);
+}
+section .intro_box p a:after {
+  transform-origin: 0% 50%;
 }
 section .jelly {
   width: 100%;
