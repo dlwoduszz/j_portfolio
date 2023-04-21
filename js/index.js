@@ -3,16 +3,16 @@ $(document).ready(function () {
 //메인
     var main_jelly=function(){
         // 젤리 숨어있기
-    $('.jelly').animate({ width: '100%', height: '100%' }).children('img').eq(0).stop(true,false).animate({ top: '-100%', left: '100%'}).end()
-        .eq(1).stop(true,false).animate({ top: '-100%', left: '-100%'}).end()
-        .eq(2).stop(true,false).animate({ top: '100%', left: '-100%'}).end()
-        .eq(3).stop(true,false).animate({ top: '100%', left: '100%'}).end()
+    $('.jelly').animate({ width: '100%', height: '100%' }).children('img').eq(0).clearQueue().animate({ top: '-100%', left: '100%'}).end()
+        .eq(1).clearQueue().animate({ top: '-100%', left: '-100%'}).end()
+        .eq(2).clearQueue().animate({ top: '100%', left: '-100%'}).end()
+        .eq(3).clearQueue().animate({ top: '100%', left: '100%'}).end()
 
         //젤리 나타나기
-    $('.jelly').children('img').eq(0).css({rotate:'-40deg', width:'40%' }).stop(true,false).animate({ top: '-5%', left: '69%'}).animate({ top: '-5%', left: '71.5%'}).animate({ top: '-5%', left: '70%'}).end()
-        .eq(1).css({rotate:'-70deg', width:'15%' }).stop(true,false).animate({ top: '-34.5%', left: '1.5%'}).animate({ top: '-36%', left: '-1%'}).animate({ top: '-35%', left: '0%'}).end()
-        .eq(2).css({rotate:'-130deg', width:'40%' }).stop(true,false).animate({ top: '63.5%', left: '3.5%'}).animate({ top: '66%', left: '1%'}).animate({ top: '65%', left: '2%'}).end()
-        .eq(3).css({rotate:'0', width:'20%' }).stop(true,false).animate({ top: '74%', left: '79%'}).animate({ top: '76.5%', left: '81.5%'}).animate({ top: '75%', left: '80%'}).end()
+    $('.jelly').children('img').eq(0).css({rotate:'-40deg', width:'40%' }).clearQueue().animate({ top: '-5%', left: '69%'}).animate({ top: '-5%', left: '71.5%'}).animate({ top: '-5%', left: '70%'}).end()
+        .eq(1).css({rotate:'-70deg', width:'15%' }).clearQueue().animate({ top: '-34.5%', left: '1.5%'}).animate({ top: '-36%', left: '-1%'}).animate({ top: '-35%', left: '0%'}).end()
+        .eq(2).css({rotate:'-130deg', width:'40%' }).clearQueue().animate({ top: '63.5%', left: '3.5%'}).animate({ top: '66%', left: '1%'}).animate({ top: '65%', left: '2%'}).end()
+        .eq(3).css({rotate:'0', width:'20%' }).clearQueue().animate({ top: '74%', left: '79%'}).animate({ top: '76.5%', left: '81.5%'}).animate({ top: '75%', left: '80%'}).end()
     }
     main_jelly();
 
@@ -51,16 +51,16 @@ $(document).ready(function () {
     })
     //메뉴버튼 모양 변환
     var menu_x = function () {
-        $('.menu_icon').children('p').eq(0).css({ transform: 'translateY(-10px)' }).end()
-            .siblings('p').eq(1).css({ transform: 'translateY(-10px)' }).end()
-            .siblings('p').eq(2).css({ transform: 'translateY(-10px)' }).end()
+        $('.menu_icon').children('p:nth-of-type(n+1):nth-of-type(-n+3)').css({ transform: 'translateY(-10px)' })
+
             .siblings('p').eq(3).css({ transform: 'translateX(-10px)' }).end()
             .siblings('p').eq(4).css({ opacity: '0%' }).end()
             .siblings('p').eq(5).css({ transform: 'translateX(10px)' }).end()
-            .siblings('p').eq(6).css({ transform: 'translateY(10px)' }).end()
-            .siblings('p').eq(7).css({ transform: 'translateY(10px)' }).end()
-            .siblings('p').eq(8).css({ transform: 'translateY(10px)' }).end()
+
+            .siblings('p:nth-of-type(n+7):nth-of-type(-n+9)').css({ transform: 'translateY(10px)' }).end()
+
             .siblings('span').css({ opacity: '100%', borderRadius: '10px' })
+            
             .siblings('span').eq(0).css({ top: '0', height: '88%' }).end()
             .siblings('span').eq(1).css({ left: '0', width: '88%' }).end();
     }
@@ -106,18 +106,18 @@ $(document).ready(function () {
                     .siblings('p').eq(6).css({ transform: 'translateY(10px)' }).end()
                     .siblings('p').eq(8).css({ transform: 'translateY(10px)' }).end()
             });
-            // J모양으로 변환
-            $('.jelly').animate({ width: '30%', height: '100%' }).children('img').eq(0).stop(true,false).animate({ top: '41.5%', left: '46.5%', rotate:'-280deg'}).animate({ top: '39%', left: '45%'}).animate({ top: '40%', left: '45%'}).end()
-            .eq(1).stop(true,false).animate({ top: '17%', left: '31.5%', rotate:'-300deg'}).animate({ top: '14%', left: '31%'}).animate({ top: '15%', left: '30%'}).end()
-            .eq(2).stop(true,false).animate({ top: '66%', left: '31.5%', rotate:'360deg'}).animate({ top: '64%', left: '31%'}).animate({ top: '65%', left: '30%'}).end()
-            .eq(3).stop(true,false).animate({ top: '50%', left: '21.5%', rotate:'280deg'}).animate({ top: '47%', left: '19%'}).animate({ top: '48%', left: '20%'}).end();
+            // 젤리모양바뀜
+            $('.jelly').animate({ width: '30%', height: '100%' }).children('img').eq(0).stop().animate({ top: '41.5%', left: '46.5%', rotate:'-280deg'}).animate({ top: '39%', left: '45%'}).animate({ top: '40%', left: '45%'}).end()
+            .eq(1).stop().animate({ top: '17%', left: '31.5%', rotate:'-300deg'}).animate({ top: '14%', left: '31%'}).animate({ top: '15%', left: '30%'}).end()
+            .eq(2).stop().animate({ top: '66%', left: '31.5%', rotate:'360deg'}).animate({ top: '64%', left: '31%'}).animate({ top: '65%', left: '30%'}).end()
+            .eq(3).stop().animate({ top: '50%', left: '21.5%', rotate:'280deg'}).animate({ top: '47%', left: '19%'}).animate({ top: '48%', left: '20%'}).end();
 
             $('.menu_list').find('li').hover(function(){
                 let i=$(this).index();
                 let w_i=$('.jelly img').eq(i).width()
-                $('.jelly img').eq(i).stop(true,false).animate({opacity:'100%'},300).siblings().stop(true,false).animate({opacity:'30%'},300)
+                $('.jelly img').eq(i).clearQueue().animate({opacity:'100%'},300).siblings().clearQueue().animate({opacity:'30%'},300)
             },function(){
-                $('.jelly img').stop(true,false).animate({opacity:'100%'},300)
+                $('.jelly img').clearQueue().animate({opacity:'100%'},300)
             })
 
         // 메뉴리스트 보이면

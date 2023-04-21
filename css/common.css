@@ -96,9 +96,8 @@
   width: 100%;
   height: auto;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
 }
 .pf_contain .pf_prev img:not(:nth-of-type(1)) {
   display: none;
@@ -139,53 +138,91 @@
 }
 
 .pfd_contain {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.pfd_contain.pfd_starbucks h2, .pfd_contain.pfd_starbucks th {
+.pfd_contain.starbucks h2, .pfd_contain.starbucks th {
   color: #016241;
 }
-.pfd_contain.pdf_case h2, .pfd_contain.pdf_case th {
+.pfd_contain.case h2, .pfd_contain.case th {
   color: #000000;
 }
 .pfd_contain .prev {
-  width: 100%;
+  width: 600px;
+  height: 600px;
   border-radius: 50px;
-  overflow: hidden;
   margin-bottom: 50px;
+  z-index: 2;
+  overflow: auto;
+}
+.pfd_contain .prev::-webkit-scrollbar {
+  display: none;
 }
 .pfd_contain .prev img {
   width: 100%;
 }
-.pfd_contain h2 {
+.pfd_contain > div {
+  position: relative;
+  width: 45%;
+}
+.pfd_contain > div h2 {
   font-size: 40px;
   border-bottom: 2px solid #606887;
   padding-bottom: 10px;
 }
-.pfd_contain table {
-  width: 50%;
-}
-.pfd_contain table tbody {
+.pfd_contain > div table {
   width: 100%;
 }
-.pfd_contain table tbody tr {
+.pfd_contain > div table tbody {
+  width: 100%;
+}
+.pfd_contain > div table tbody tr {
   width: 45%;
 }
-.pfd_contain table tbody tr th {
+.pfd_contain > div table tbody tr th {
   float: left;
   padding: 10px 0;
 }
-.pfd_contain table tbody tr td {
+.pfd_contain > div table tbody tr td {
   float: right;
   padding: 10px 0;
 }
-.pfd_contain table tbody tr td span {
+.pfd_contain > div table tbody tr td span {
   padding: 7px 10px 5px 10px;
   border-radius: 10px;
   background: #016241;
   color: white;
   font-size: 15px;
   font-weight: lighter;
+}
+.pfd_contain > div a {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10%;
+  margin-top: 50px;
+  display: inline-block;
+  font-size: 20px;
+  color: #606887;
+  padding: 0px 10px;
+  font-weight: lighter;
+  line-height: 40px;
+}
+.pfd_contain > div a:after {
+  display: block;
+  content: "";
+  border-bottom: 2px solid #606887;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.pfd_contain > div a:hover:after {
+  transform: scaleX(1);
+}
+.pfd_contain > div a:after {
+  transform-origin: 0% 50%;
 }
 
 .ct_contain {
@@ -340,6 +377,8 @@ header .gnb .menu_list ul li a span {
 #container {
   width: 1200px;
   margin: 50px auto 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 section {
