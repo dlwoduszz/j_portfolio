@@ -198,30 +198,31 @@
   font-size: 15px;
   font-weight: lighter;
 }
-.pfd_contain > div a {
+.pfd_contain > div div {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10%;
-  margin-top: 50px;
-  display: inline-block;
+  bottom: 15%;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.pfd_contain > div div a {
   font-size: 20px;
   color: #606887;
   padding: 0px 10px;
   font-weight: lighter;
   line-height: 40px;
 }
-.pfd_contain > div a:after {
+.pfd_contain > div div a:after {
   display: block;
   content: "";
   border-bottom: 2px solid #606887;
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
-.pfd_contain > div a:hover:after {
+.pfd_contain > div div a:hover:after {
   transform: scaleX(1);
 }
-.pfd_contain > div a:after {
+.pfd_contain > div div a:after {
   transform-origin: 0% 50%;
 }
 
@@ -279,6 +280,12 @@ body {
 a {
   color: #222;
   text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 header {

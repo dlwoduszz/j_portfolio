@@ -9,12 +9,17 @@ $(document).ready(function(){
     var prev_scroll=function(){
         $('.prev').animate({scrollTop:'200'},800).animate({scrollTop:'100'},500).animate({scrollTop:'150'}).animate({scrollTop:'130'},500)
     }
+
+    // prev_scroll();
+    
+    var ani=setInterval(prev_scroll,2400);
+
+    $('.prev').hover(function(){
+        clearInterval(ani);
+    },function(){        
+        ani=setInterval(prev_scroll,2400);
+    })
        
 
-   if($('.prev').scrollTop()<100){
-        setInterval(prev_scroll)
-   }else if($('.prev').hover){
-        clearInterval()
-   }
 
 })
