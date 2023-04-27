@@ -38,17 +38,40 @@ $(document).ready(function () {
 
 
 // 헤더
+
     // 밝기전환 아이콘
-    $('.moon').click(function () {
-        if ($('body').css("background-color") === 'rgb(255, 243, 254)') {
-            $('body').css({background:'rgb(49, 49, 58)'});
-            $('.jelly img').css("filter", "grayscale(1)")
-            $('*').css('color','#f3f2f9')
-        }else{
-            $('body').css("background-color", 'rgb(255, 243, 254)')
-            $('.jelly img').css("filter", "grayscale(0)")
-        }       
+    var darkModeYN=localStorage["darkMode"];
+
+    loadMode();
+
+    function loadMode(){
+        if (darkModeYN == "Y"){
+            $('body, .jelly img, *, h2, .pf_list li, .menu_icon').addClass("dark");
+            $('.moon').children().attr('src','img/sun.png').css({width:'70%'});
+        } else {
+            $('body, .jelly img, *, h2, .pf_list li, .menu_icon').removeClass("dark");
+            $('.moon').children().attr('src','img/moon.png').css({width:'50%'});
+        }    
+    }
+
+    $('.moon').click(function(){
+        if (darkModeYN == "N"){
+            localStorage["darkMode"] = 'Y'
+            
+        } else {
+            localStorage["darkMode"] = 'N'
+            
+        }
+        location.reload(); // 웹페이지 새로고침
     })
+
+    // $('.moon').click(function(){
+        
+    //     $('body, .jelly img, *, h2, .pf_list li, .menu_icon').toggleClass("dark");
+    //     // $(this).children().attr('src','img/sun.png').css({width:'70%'});
+    // })
+ 
+
     //메뉴버튼 모양 변환
     var menu_x = function () {
         $('.menu_icon').children('p:nth-of-type(n+1):nth-of-type(-n+3)').css({ transform: 'translateY(-10px)' })
@@ -92,7 +115,7 @@ $(document).ready(function () {
         }
     })
     $('.menu_icon').click(function () {
-        // 메뉴리스트 안보이면
+        // 메뉴리스트 안보이면 보이게 하기
         if ($('.menu_list').css('display') == 'none') {
 
             //인삿말 없애기
@@ -120,7 +143,12 @@ $(document).ready(function () {
                 $('.jelly img').clearQueue().animate({opacity:'100%'},300)
             })
 
-        // 메뉴리스트 보이면
+            
+            //배경 흐리게 취소
+            $('.back').css({backdropFilter:'none'})
+            $('#container').children().fadeOut(300);
+
+        // 메뉴리스트 보이면 안보이게 하기
         } else if ($('.menu_list').css('display') == 'block') {
             // 메뉴 아이콘 원래모양으로
             $('.menu_list').find('a').stop().animate({ top: '-110px' }, function () {
@@ -135,6 +163,10 @@ $(document).ready(function () {
             main_jelly();
             // 인삿말 보이기
             text_hi();
+
+            //배경 흐리게 
+            $('.back').css({backdropFilter:'blur(100px)'})
+            $('#container').children().fadeIn(300);
         }
     })
 

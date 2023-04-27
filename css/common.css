@@ -13,9 +13,6 @@
   font-size: 18px;
   line-height: 35px;
 }
-.ab_contain > div p span {
-  text-shadow: 0px 0px 5px rgb(255, 255, 255);
-}
 .ab_contain > div .skill {
   width: 100%;
   margin-top: 5%;
@@ -33,7 +30,7 @@
   font-size: 18px;
   padding: 5px 20px;
   background-color: #606887;
-  color: white;
+  color: white !important;
   border-radius: 25px;
   display: inline-block;
 }
@@ -109,11 +106,21 @@
   font-size: 40px;
   color: #606887;
   padding-bottom: 10px;
+  border-bottom: 2px solid #606887;
+}
+.pf_contain .pf_list h2.dark {
+  border-bottom: 2px solid #f3f2f9;
+  color: #f3f2f9;
 }
 .pf_contain .pf_list ul li {
   font-size: 24px;
   padding: 25px 0;
-  border-top: 2px solid #606887;
+}
+.pf_contain .pf_list ul li.dark:not(:nth-last-of-type(1)) {
+  border-bottom: 2px solid #f3f2f9;
+}
+.pf_contain .pf_list ul li:not(:nth-last-of-type(1)) {
+  border-bottom: 2px solid #606887;
 }
 .pf_contain .pf_list ul li a {
   color: #606887;
@@ -134,7 +141,7 @@
   border-radius: 8px;
   background: #606887;
   margin-left: 10px;
-  color: white;
+  color: white !important;
 }
 
 .pfd_contain {
@@ -145,10 +152,25 @@
   flex-wrap: wrap;
 }
 .pfd_contain.starbucks h2, .pfd_contain.starbucks th {
-  color: #016241;
+  color: #008d5e;
+}
+.pfd_contain.kyobo h2, .pfd_contain.kyobo th {
+  color: #125dad;
+}
+.pfd_contain.monami h2, .pfd_contain.monami th {
+  color: #c40f39;
+}
+.pfd_contain.deers h2, .pfd_contain.deers th {
+  color: #FAC249;
+}
+.pfd_contain.chupachups h2, .pfd_contain.chupachups th {
+  color: #f55683;
 }
 .pfd_contain.case h2, .pfd_contain.case th {
   color: #000000;
+}
+.pfd_contain.case h2.dark, .pfd_contain.case th.dark {
+  color: white;
 }
 .pfd_contain .prev {
   width: 600px;
@@ -173,6 +195,9 @@
   border-bottom: 2px solid #606887;
   padding-bottom: 10px;
 }
+.pfd_contain > div h2.dark {
+  border-bottom: 2px solid #f3f2f9;
+}
 .pfd_contain > div table {
   width: 100%;
 }
@@ -189,6 +214,8 @@
 .pfd_contain > div table tbody tr td {
   float: right;
   padding: 10px 0;
+  text-align: right;
+  line-height: 28px;
 }
 .pfd_contain > div table tbody tr td span {
   padding: 7px 10px 5px 10px;
@@ -236,15 +263,21 @@
   padding-bottom: 10px;
   border-bottom: 2px solid #606887;
 }
+.ct_contain h2.dark {
+  color: #f3f2f9;
+}
 .ct_contain ul {
   padding-top: 10px;
 }
-.ct_contain ul li {
+.ct_contain ul li, .ct_contain ul a {
   font-size: 20px;
   color: #606887;
   line-height: 50px;
 }
-.ct_contain ul li span {
+.ct_contain ul li.dark, .ct_contain ul a.dark {
+  color: #f3f2f9;
+}
+.ct_contain ul li span, .ct_contain ul a span {
   margin-right: 20px;
 }
 
@@ -267,6 +300,9 @@
   font-family: "LINESeedKR-Bd", "맑은 고딕";
   color: #606887;
 }
+*.dark {
+  color: #f3f2f9;
+}
 
 ul,
 li {
@@ -275,6 +311,9 @@ li {
 
 body {
   background-color: #FFF3FE;
+}
+body.dark {
+  background: rgb(49, 49, 58);
 }
 
 a {
@@ -318,6 +357,15 @@ header .gnb .moon {
   line-height: 35px;
   text-align: center;
   margin-right: 20px;
+  position: relative;
+}
+header .gnb .moon img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  z-index: 4;
 }
 header .gnb .menu_icon {
   width: 35px;
@@ -340,6 +388,10 @@ header .gnb .menu_icon span {
   border-radius: 100%;
   transition-duration: 0.15s;
 }
+header .gnb .menu_icon p.dark,
+header .gnb .menu_icon span.dark {
+  border: 2px solid #f3f2f9;
+}
 header .gnb .menu_icon span {
   opacity: 0%;
   position: absolute;
@@ -350,13 +402,16 @@ header .gnb .menu_list {
   display: none;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
   position: fixed;
-  top: 30%;
-  left: 25%;
-  z-index: 2;
+  z-index: 3;
   overflow: hidden;
 }
 header .gnb .menu_list ul {
+  position: absolute;
+  left: 25%;
+  top: 30%;
   font-size: 65px;
   width: 100%;
   height: 100%;
@@ -413,6 +468,9 @@ section .intro_box p {
   position: relative;
   opacity: 0;
 }
+section .intro_box p.dark {
+  color: #f3f2f9;
+}
 section .intro_box p:nth-of-type(1) {
   top: -200px;
 }
@@ -444,6 +502,14 @@ section .intro_box p a:hover:after {
 section .intro_box p a:after {
   transform-origin: 0% 50%;
 }
+section .back {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+}
 section .jelly {
   width: 100%;
   height: 100%;
@@ -456,6 +522,9 @@ section .jelly img {
   position: absolute;
   left: 0;
   top: 0;
+}
+section .jelly img.dark {
+  filter: brightness(0.15);
 }
 section .jelly img:nth-of-type(1) {
   z-index: 3;
