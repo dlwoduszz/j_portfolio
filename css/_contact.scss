@@ -1,0 +1,36 @@
+$back-color: #FFF3FE;
+$main-color: #606887;
+$starbucks-color:#016241;
+$case-color:#000000;
+$dark-color:#f3f2f9;
+
+.ct_contain{
+    width:100%;
+    margin:0 auto;
+    h2{
+        font-size:40px;
+        color:$main-color;
+        padding-bottom:10px;
+        border-bottom:2px solid $main-color;
+        &.dark{
+            color:$dark-color
+        }
+    }
+    ul{
+        padding-top:10px;
+        li,a{
+            font-size:20px;
+            color:$main-color;
+            line-height:50px;
+            &.dark{
+                color:$dark-color
+            }
+            span{
+                margin-right: 20px;
+                
+            }
+        }
+    }
+}
+
+

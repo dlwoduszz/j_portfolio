@@ -185,6 +185,13 @@
 }
 .pfd_contain .prev img {
   width: 100%;
+  position: absolute;
+}
+.pfd_contain .prev img:nth-of-type(1) {
+  top: 0;
+}
+.pfd_contain .prev img:nth-of-type(2) {
+  top: 610px;
 }
 .pfd_contain > div {
   position: relative;
