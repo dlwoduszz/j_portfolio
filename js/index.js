@@ -27,6 +27,34 @@ $(document).ready(function () {
         var text_hi=function(){
             $('.intro_box').children().eq(0).clearQueue().animate({top:'0px', opacity:'100%'},850)
             .end().siblings().eq(1).clearQueue().animate({bottom:'0px', opacity:'100%'},850)
+            
+            //젤리셔스 호버시 배경 물결 움직임
+            var positionX=0;
+            var move_positionX;
+
+            function startMove(){
+                move_positionX=setInterval(()=>{
+                    positionX++  
+                    $('.intro_box').find('.wave').css({backgroundPositionX:`${positionX}px`})
+                },20)
+            }
+
+            function stopMove(){
+                clearInterval(move_positionX)
+            }
+            
+            $('.intro_box').find('.wave').stop().mouseenter(function(){
+                startMove()
+            })
+            $('.intro_box').find('.wave').stop().mouseleave(function(){
+                stopMove()
+            })
+
+            $('.intro_box').find('.name').hover(function(){
+                $(this).html('젤 리재연')
+            },function(){
+                $(this).html('젤리 재연')
+            })
         }
         text_hi();
 
@@ -65,11 +93,6 @@ $(document).ready(function () {
         location.reload(); // 웹페이지 새로고침
     })
 
-    // $('.moon').click(function(){
-        
-    //     $('body, .jelly img, *, h2, .pf_list li, .menu_icon').toggleClass("dark");
-    //     // $(this).children().attr('src','img/sun.png').css({width:'70%'});
-    // })
  
 
     //메뉴버튼 모양 변환
